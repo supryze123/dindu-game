@@ -10,7 +10,6 @@ screen = pygame.display.set_mode((800,400)) #rezolucija
 pygame.display.set_caption('Le dindu game') #window name
 clock = pygame.time.Clock() #FPS limit
 
-test_font = pygame.font.Font('font/Pixeltype.ttf', 50)
 game_active = 1
 
 test_surface = pygame.Surface((800,400))
@@ -28,7 +27,7 @@ while 1: #window ostaje otvoren
         if event.type == pygame.QUIT: #exit da radi 
             pygame.quit()
             exit()
-
+            
         if game_active:
             if event.type == pygame.KEYDOWN:
                 if (event.key == pygame.K_w or event.key == pygame.K_UP) and player_rect.top > 0 :
