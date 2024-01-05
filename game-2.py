@@ -1,6 +1,6 @@
 import pygame
 from random import randint
-from sys import exit #za gore desno X
+from sys import exit 
 import pyautogui
 
 WIDTH = pyautogui.size()[0]
@@ -81,7 +81,7 @@ def flyInFromTheLeft():
 pygame.key.set_repeat(10, 10)
 while True: 
     for event in pygame.event.get():         #PLAYER INPUT
-        if event.type == pygame.QUIT: #exit da radi 
+        if event.type == pygame.QUIT: 
             pygame.quit()
             exit()
             
@@ -124,7 +124,7 @@ while True:
 
         velocity_at_which_vertical_birds_fly_into_the_screen = 15
 
-        for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):  # Assuming you have 18 society_rects in total
+        for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution): 
             society_rects[f"society_{iterator}_rect"].x += velocity_at_which_vertical_birds_fly_into_the_screen
 
         for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):
@@ -146,9 +146,9 @@ while True:
             velocity_on_the_y_axis_of_the_alternating_bird -= randint(5, 10)#3
             velocity_on_the_y_axis_of_the_alternating_bird = -velocity_on_the_y_axis_of_the_alternating_bird
 
-        screen.blit(bird_facing_right_texture, alternating_bird_rectangle)  #PTICA KOJA RANDOM
+        screen.blit(bird_facing_right_texture, alternating_bird_rectangle)  
         screen.blit(player_surf, player_rect)    #PLAYER
-        screen.blit(the_pick_up_formerly_known_as_donut_texture, krofna_rect)    #KROFNA
+        screen.blit(the_pick_up_formerly_known_as_donut_texture, krofna_rect)    
 
         if society_rects[f"society_{number_of_vertical_birds_based_on_the_screen_resolution-2}_rect"].x >= WIDTH + velocity_at_which_vertical_birds_fly_into_the_screen*60*randint(1, 5):
             flyInFromTheRight()
