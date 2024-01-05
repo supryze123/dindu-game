@@ -1,6 +1,6 @@
 import pygame
 from random import randint
-from sys import exit #za gore desno X
+from sys import exit 
 import pyautogui
 
 WIDTH = pyautogui.size()[0]
@@ -81,7 +81,7 @@ def flyInFromTheLeft():
 pygame.key.set_repeat(10, 10)
 while True: 
     for event in pygame.event.get():         #PLAYER INPUT
-        if event.type == pygame.QUIT: #exit da radi 
+        if event.type == pygame.QUIT: 
             pygame.quit()
             exit()
             
