@@ -68,13 +68,13 @@ player_rect = player_surf.get_rect(midbottom = (80,300))
 
 def flyInFromTheRight():
     print("FUNCTION FLYINFROMTHERIGHT RUNNING")
-    for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):  # Assuming you have 18 society_rects in total
+    for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution): 
             society_rects[f"society_{iterator}_rect"].x = 0 - (iterator+1) * 34
             society_rects[f"society_{iterator}_rect"].y = HEIGHT - 24/2 - iterator * 24 ######### 24/2 
 
 def flyInFromTheLeft():
     print('FUNCTION FLYINFROMTHELEFT RUNNING')
-    for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):  # Assuming you have 18 society_rects in total
+    for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):  
             birdie_rects[f"birdie_{iterator}_rect"].x = WIDTH + (iterator+1) * 34
             birdie_rects[f"birdie_{iterator}_rect"].y = 24/2 + 24 * (iterator+1) ######### 24/2
 
@@ -107,7 +107,7 @@ while True:
 
                 flyInFromTheRight()
                 
-                for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):  # Assuming you have 18 society_rects in total
+                for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution): 
                     birdie_rects[f"birdie_{iterator}_rect"].centerx = WIDTH + (iterator+1) * 34 + 500
                     birdie_rects[f"birdie_{iterator}_rect"].centery = 0 + (2*iterator+1) * 24/2 ######### 24/2
  
@@ -124,7 +124,7 @@ while True:
 
         velocity_at_which_vertical_birds_fly_into_the_screen = 15
 
-        for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):  # Assuming you have 18 society_rects in total
+        for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):  
             society_rects[f"society_{iterator}_rect"].x += velocity_at_which_vertical_birds_fly_into_the_screen
 
         for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):
@@ -146,9 +146,9 @@ while True:
             velocity_on_the_y_axis_of_the_alternating_bird -= randint(5, 10)#3
             velocity_on_the_y_axis_of_the_alternating_bird = -velocity_on_the_y_axis_of_the_alternating_bird
 
-        screen.blit(bird_facing_right_texture, alternating_bird_rectangle)  #PTICA KOJA RANDOM
+        screen.blit(bird_facing_right_texture, alternating_bird_rectangle)  
         screen.blit(player_surf, player_rect)    #PLAYER
-        screen.blit(the_pick_up_formerly_known_as_donut_texture, krofna_rect)    #KROFNA
+        screen.blit(the_pick_up_formerly_known_as_donut_texture, krofna_rect)   
 
         if society_rects[f"society_{number_of_vertical_birds_based_on_the_screen_resolution-2}_rect"].x >= WIDTH + velocity_at_which_vertical_birds_fly_into_the_screen*60*randint(1, 5):
             flyInFromTheRight()
