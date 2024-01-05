@@ -68,13 +68,13 @@ player_rect = player_surf.get_rect(midbottom = (80,300))
 
 def flyInFromTheRight():
     print("FUNCTION FLYINFROMTHERIGHT RUNNING")
-    for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):  # Assuming you have 18 society_rects in total
+    for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):  
             society_rects[f"society_{iterator}_rect"].x = 0 - (iterator+1) * 34
             society_rects[f"society_{iterator}_rect"].y = HEIGHT - 24/2 - iterator * 24 ######### 24/2 
 
 def flyInFromTheLeft():
     print('FUNCTION FLYINFROMTHELEFT RUNNING')
-    for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):  # Assuming you have 18 society_rects in total
+    for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):  
             birdie_rects[f"birdie_{iterator}_rect"].x = WIDTH + (iterator+1) * 34
             birdie_rects[f"birdie_{iterator}_rect"].y = 24/2 + 24 * (iterator+1) ######### 24/2
 
@@ -107,7 +107,7 @@ while True:
 
                 flyInFromTheRight()
                 
-                for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution):  # Assuming you have 18 society_rects in total
+                for iterator in range(number_of_vertical_birds_based_on_the_screen_resolution): 
                     birdie_rects[f"birdie_{iterator}_rect"].centerx = WIDTH + (iterator+1) * 34 + 500
                     birdie_rects[f"birdie_{iterator}_rect"].centery = 0 + (2*iterator+1) * 24/2 ######### 24/2
  
